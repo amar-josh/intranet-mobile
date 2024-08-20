@@ -4,8 +4,8 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableWithoutFeedback,
   ScrollView,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import {
@@ -94,11 +94,13 @@ const CoreValueInfoModal: React.FC<CoreValueInfoModalProp> = ({
       onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
-            <ScrollView contentContainerStyle={styles.scrollView}>
-              {coreValues}
-            </ScrollView>
-          </View>
+          <TouchableWithoutFeedback>
+            <View style={styles.modalContainer}>
+              <ScrollView contentContainerStyle={styles.scrollView}>
+                {coreValues}
+              </ScrollView>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
       </TouchableWithoutFeedback>
     </Modal>
